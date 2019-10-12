@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    container_name: armhf_busybox
+    image: armhf/busybox
+    command: tail -f /dev/null
+    network_mode: host
+    volumes:
+      - ./data:/data
