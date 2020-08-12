@@ -3,5 +3,7 @@ services:
   app:
     container_name: ubuntu
     build: .
+    volumes:
+      - ~:/host
     command: tail -f /dev/null
     network_mode: host
