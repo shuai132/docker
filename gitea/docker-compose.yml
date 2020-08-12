@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   web:
     image: gitea/gitea:1.8.3
@@ -7,16 +7,4 @@ services:
     ports:
       - "3000:3000"
       - "22:22"
-    depends_on:
-      - db
     restart: always
-  db:
-    image: mariadb:10
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=changeme
-      - MYSQL_DATABASE=gitea
-      - MYSQL_USER=gitea
-      - MYSQL_PASSWORD=changeme
-    volumes:
-      - ./db/:/var/lib/mysql
